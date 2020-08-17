@@ -23,7 +23,7 @@ export function fetchSimilarArtists(query: string): Promise<any> {
       });
   });
 }
-\
+
 export function fetchArtistInfo(query: string): Promise<any> {
   return new Promise((resolve, reject) => {
     axios

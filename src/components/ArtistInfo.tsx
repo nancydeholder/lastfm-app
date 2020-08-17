@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Bio } from "../schemas/artist.schema";
 import { fetchArtistInfo } from "../services/LastFMService/LastFMService";
 import { useLocation } from "react-router-dom";
+import { Container, Card, CardContent } from "@material-ui/core";
 
 export interface ArtistWidgetProps {
   props: object;
@@ -10,21 +11,33 @@ export interface ArtistWidgetProps {
 export const ArtistInfo: React.FC = () => {
   const [artistBio, setArtistBio] = useState<Bio>();
   let location = useLocation();
+  const selectedArtist = location.state.name;
 
   useEffect(() => {
-    fetchArtistInfo("test").then((response) => {
+    fetchArtistInfo(selectedArtist).then((response) => {
       const results = response.artist.bio;
       setArtistBio(results);
     });
-  }, []);
+  }, [selectedArtist]);
+
   return (
-    <div>
-      {artistBio && (
-        <div>
-          <h3>{location.state.name}</h3>
-          <p>{artistBio.content}</p>
-        </div>
-      )}
-    </div>
+    <Container>
+      <div>
+        {artistBio && (
+          <Card>
+            <CardContent>
+              <h3>{selectedArtist}</h3>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: artistBio.content
+                    ? artistBio.content
+                    : "Sorry, no bio found on this artist",
+                }}
+              ></div>
+            </CardContent>
+          </Card>
+        )}
+      </div>
+    </Container>
   );
 };

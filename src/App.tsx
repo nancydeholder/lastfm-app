@@ -1,15 +1,20 @@
 import React from "react";
 import "./App.css";
-import { Search } from "./components/Search";
+import { ArtistSearch } from "./components/ArtistSearch";
 import { ArtistInfo } from "./components/ArtistInfo";
+import { ArtistWidget } from "./components/ArtistWidget";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "fontsource-roboto";
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <Search />
+          <ArtistSearch />
+        </Route>
+        <Route exact path="/similar-artists">
+          <ArtistWidget />
         </Route>
         <Route path="/artist/:id">
           <ArtistInfo />
