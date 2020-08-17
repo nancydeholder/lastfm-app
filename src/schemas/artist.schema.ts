@@ -9,11 +9,17 @@ export interface Artist {
   url: string;
 }
 
+export interface ArtistData {
+  bio: Bio;
+  stats: Stats;
+}
+
 export interface Bio {
   summary: string;
   content: string;
 }
 
-export interface ArtistBio {
-  bio: Bio[];
+export interface Stats {
+  listeners: string;
+  playcount: string;
 }
