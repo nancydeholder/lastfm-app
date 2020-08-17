@@ -35,7 +35,7 @@ export const ArtistSearch: React.FC = () => {
 
   return (
     <Grid container alignItems="center" className={classes.container}>
-      <form className={classes.form}>
+      <form className={classes.form} data-testid="artist:search">
         <TextField
           id="outlined-number"
           label="Search Favorite Artist"
@@ -57,6 +57,7 @@ export const ArtistSearch: React.FC = () => {
             },
           }}
           className={classes.link}
+          data-testid="artist:search:link"
         >
           <Button
             className={classes.button}

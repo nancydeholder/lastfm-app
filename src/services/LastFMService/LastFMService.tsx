@@ -1,8 +1,8 @@
 import axios from "axios";
 import { SimilarArtists, ArtistBio } from "../../schemas/artist.schema";
 
-const BASE_URL = `http://ws.audioscrobbler.com/2.0/`;
-const API_KEY = `3e44b221241839d86d4a8ec6c027e0e2`;
+export const BASE_URL = `http://ws.audioscrobbler.com/2.0/`;
+export const API_KEY = `3e44b221241839d86d4a8ec6c027e0e2`;
 
 export function fetchSimilarArtists(query: string): Promise<any> {
   return new Promise((resolve, reject) => {

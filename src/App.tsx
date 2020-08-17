@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
-import { ArtistSearch } from "./components/ArtistSearch";
-import { ArtistInfo } from "./components/ArtistInfo";
-import { ArtistWidget } from "./components/ArtistWidget";
+import { ArtistSearch } from "./components/ArtistSearch/ArtistSearch";
+import { ArtistInfo } from "./components/ArtistInfo/ArtistInfo";
+import { ArtistWidget } from "./components/ArtistWidget/ArtistWidget";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "fontsource-roboto";
 

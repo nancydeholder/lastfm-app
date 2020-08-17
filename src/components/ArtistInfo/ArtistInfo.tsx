@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Bio } from "../schemas/artist.schema";
-import { fetchArtistInfo } from "../services/LastFMService/LastFMService";
+import { Bio } from "../../schemas/artist.schema";
+import { fetchArtistInfo } from "../../services/LastFMService/LastFMService";
 import { useLocation } from "react-router-dom";
 import { Container, Card, CardContent } from "@material-ui/core";
 

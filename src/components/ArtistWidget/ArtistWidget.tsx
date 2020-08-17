@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Artist } from "../schemas/artist.schema";
-import { fetchSimilarArtists } from "../services/LastFMService/LastFMService";
+import { Artist } from "../../schemas/artist.schema";
+import { fetchSimilarArtists } from "../../services/LastFMService/LastFMService";
 import {
   Card,
   CardContent,
